@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,user-scalable=no">
+<meta charset="UTF-8">
+<title>phone--面向对象</title>
+<script type="text/javascript">
+	document.getElementsByTagName('html')[0].style.fontSize = window.screen.width / 3 + 'px';
+</script>
+<style type="text/css">
+*{ margin: 0; padding: 0; }
+body{ font-size: 0.14rem; }
+#banner_wrap{ width: 3rem; height: 0.96rem; margin: auto; overflow: hidden; position: relative; }	
+.img_wrap{ width: 15rem; position: absolute; left: 0; top: 0; }
+.img_wrap>a{ float: left; width: 3rem; height: 0.96rem; }
+.img_wrap>a>img{ width: 100%; height: 100%; }
+.cursor_wrap{ position: absolute; left: 0; bottom: 0.04rem; width: 100%; text-align: center; overflow: hidden; }
+.cursor_wrap>a{ display: inline-block; border: 1px solid #000; box-sizing: border-box; padding: 0.03rem; background: #fff; margin-left: 0.04rem; border-radius: 50%; }
+.cursor_wrap>a.active{ background: orange; }
+</style>
+</head>
+<body>
+	<div id="banner_wrap">
+		<div class="img_wrap">
+			<a href="javascript:;"><img src="./img/1.jpg" alt=""></a>
+			<a href="javascript:;"><img src="./img/2.jpg" alt=""></a>
+			<a href="javascript:;"><img src="./img/3.jpg" alt=""></a>
+			<a href="javascript:;"><img src="./img/4.jpg" alt=""></a>
+			<a href="javascript:;"><img src="./img/5.jpg" alt=""></a>
+		</div>
+	</div>
+<script type="text/javascript" src="Carousel_m.js"></script>
+<script type="text/javascript">
+	var bannerWrap = document.getElementById('banner_wrap');
+	var Num = 0;
+	var Car = new Carousel();
+		Car.init(bannerWrap);
+
+		bindEvent(Car, 'callBacks', function(Car){
+			console.log( Car.iNow );
+		});
+</script>
+</body>
+</html>

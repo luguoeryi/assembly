@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播组件</title>
+		<style>
+			*{ margin: 0; padding: 0; }
+			img{ border: none; float: left; }
+			.banner_wrap{ width: 1024px; height: 320px; margin: 30px auto 0; position: relative; overflow: hidden; }
+			.banner_wrap .img_list{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;}
+			.banner_wrap .img_list a{ float: left; position: absolute; left: 0; top: 0; }
+			.cursor_box{ width: 100%; position: absolute; z-index: 100; left: 0; bottom: 10px; text-align: center; }
+			.cursor_box a{ display: inline-block; width: 15px; height: 15px; border-radius: 50%; background: #fff; margin-left: 4px; }
+			.cursor_box a.active{ background: gold; }
+			.banner_wrap .banner_prev, .banner_wrap .banner_next{ display: none; opacity: 0.3; filter: alpha(opacity=30); width: 36px; height: 80px; cursor: pointer; background: url("img/cursor.png") no-repeat; background-size: cover; position: absolute; top: 120px; z-index: 150; }
+			.banner_wrap .banner_prev{ left: 0; background-position: left top; }
+			.banner_wrap .banner_next{ right: 0; background-position: right top; }
+			.banner_wrap:hover .banner_prev, .banner_wrap:hover .banner_next{ display: block;}
+			.banner_wrap .banner_prev:hover, .banner_wrap .banner_next:hover{ opacity: 0.5; filter: alpha(opacity=50); }
+		</style>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="js/carousel.js" type="text/javascript"></script>
+		<script>
+			window.onload = function(){
+				var banner1 = new Carousel();
+					banner1.init($('.banner_wrap'),{
+						event : 'mouseover',
+						opacitys : true
+					});
+					$(banner1).on('callbacks',function(event, i){
+						//console.log( i );
+					})
+			};
+		</script>
+	</head>
+	<body>
+		<div class="banner_wrap">
+			<div class="img_list">
+				<a href="javascript:;"><img src="img/1.png" /></a>
+				<a href="javascript:;"><img src="img/2.png" /></a>
+				<a href="javascript:;"><img src="img/3.png" /></a>
+				<a href="javascript:;"><img src="img/2.png" /></a>
+			</div>
+		</div>
+	</body>
+</html>

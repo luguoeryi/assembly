@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹框组件</title>
+		<link href="css/button.css" rel="stylesheet" type="text/css">		
+		<link href="css/capacity.css" rel="stylesheet" type="text/css">
+		<script src="sky/sky.js" type="text/javascript" charset="UTF-8"></script>
+		<script>
+			window.onload = function(){
+				
+				var aBtn = document.getElementsByTagName('button');
+				aBtn[0].onmousedown = function(){
+					var d1 = new Dialog();
+					d1.init({
+						iNow : 0,
+						title : '登录',
+						dir : 'dir',
+						L : 100,
+						T : 200,
+					});
+				};
+				aBtn[1].onmousedown = function(){
+					var d2 = new Dialog();
+					d2.init({
+						iNow : 1,
+						W : 150,
+						H : 400,
+						title : '公告',
+						dir : 'right'
+					});
+				};
+				aBtn[2].onmousedown = function(){
+					var d3 = new Dialog();
+					d3.init({
+						iNow : 2,
+						mark : true,
+						drag : true
+					});
+				};
+		
+			};
+		</script>
+	</head>
+	<body>
+		<div class="btn_box">
+			<button>弹框1</button>
+			<button>弹框2</button>
+			<button>弹框3</button>
+		</div>
+		<!--<div class="capacity">
+			<h3>这是标题<span class="close">X</span></h3>
+			<div class="content"></div>
+		</div>-->
+	</body>
+</html>

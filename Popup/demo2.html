@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拖拽组件</title>
+		<link href="css/capacity.css" rel="stylesheet" type="text/css">
+		<script src="sky/sky.js" type="text/javascript" charset="UTF-8"></script>
+		<script>
+			window.onload = function(){
+				var obj = document.getElementsByClassName('capacity');
+				
+				var drag1 = new Drag();
+					drag1.init({
+						obj : obj[0]
+					});
+					bindEvent(drag1, 'toDown', function(){
+						document.title = 'hello';
+					});
+				
+				var drag2 = new Drag();
+					drag2.init({
+						obj : obj[1],
+						field : true,
+						movement : true
+					});
+					bindEvent(drag2, 'toDown', function(){
+						document.title = '你好';
+					});
+					
+					bindEvent(drag2, 'toUp', function(obj){
+						document.title = 'byebye';
+						obj.obj.getElementsByTagName('h3')[0].style.background = 'rgba(0,0,0,0.5)';
+					});
+			};
+		</script>
+	</head>
+	<body>
+		<div class="capacity">
+			<h3>这是标题</h3>
+			<div class="content"></div>
+		</div>
+		<div class="capacity">
+			<h3>这是标题</h3>
+			<div class="content"></div>
+		</div>
+	</body>
+</html>
