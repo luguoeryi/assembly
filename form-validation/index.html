@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form Verification</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="./js/jquery-1.11.3.min.js"></script>
+	<style>
+			body {
+				background: #262b32;
+				color: #fff;
+			}
+			h1 {
+				color: orange;
+				font-weight: bold;
+			}
+			select {
+				color: #000;
+			}
+	</style>
+</head>
+<body>
+	<h1 class="text-center">表单验证</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="form_wrap">
+					<form action="javascript:;" class="js-form-ver">
+						<div class="form-group">
+							<label>用户名：</label>
+							<input id="ons" js-required="on" js-pattern="en" js-length="4,10" type="text" class="form-control" placeholder="用户名" />
+						</div>
+						<div class="form-group">
+							<label>密码：</label>
+							<input js-required="on" js-pattern="w" js-length="5,12" relation="on" type="password" class="form-control" placeholder="密码" />
+						</div>
+						<div class="form-group">
+							<label>确认密码：</label>
+							<input js-required="on" js-pattern="w" js-length="5,12" relation="on" type="password" class="form-control" placeholder="确认密码" />
+						</div>
+						<div class="form-group">
+							<label>安全码:</label>
+							<div class="btn-toolbar">
+								<select js-required="on" class="btn">
+									<option value="">$</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="9">9</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+								</select>
+								<select js-required="on" class="btn">
+									<option value="">$</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="9">9</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+								</select>
+								<select js-required="on" class="btn">
+									<option value="">$</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="9">9</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+								</select>
+								<select js-required="on" class="btn">
+									<option value="">$</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="9">9</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>真实姓名：</label>
+							<input placeholder="真实姓名" js-required="on" js-pattern="en" type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>手机：</label>
+							<input placeholder="手机" js-pattern="d" js-length="11" type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>QQ：</label>
+							<input placeholder="QQ" js-pattern="d" js-length="5,11" type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label>邮箱：</label>
+							<input placeholder="邮箱" js-pattern="emali" js-length="5,11" type="text" class="form-control" />
+						</div>
+						<div class="form-group">
+							<input type="submit" class="form-control btn btn-success" value="提交" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+
+	<script>
+		//var types = $('.js-form-ver')[0].tagName.toLowerCase();
+		
+		$('input[type=submit]').on('click', function(){
+			Fveran( $('.js-form-ver') );
+		});
+
+		function Fveran(wrap){
+			$.each($(wrap).find('*'), function(i, elem){
+				return filters( $(elem) );
+			});
+		};
+		function filters(obj){
+
+			var htmlName = $(obj)[0].tagName.toLowerCase();
+
+			var values = trim( $(obj).val() );
+
+			if( $(obj).attr('js-required') == 'on' && filterForm(htmlName) ){//取得验证元素
+
+				var warns = $(obj).attr('placeholder') ? $(obj).attr('placeholder') : '空字段';
+
+				if( notNull( values ) &&  values != warns ) {//取得非空元素
+					
+					if( $(obj).attr('js-pattern') ){	//取得验证规则
+						return pattern( $(obj), values, warns);
+					}
+
+				}/*else {
+					console.warn('请填写'+warns);
+					return false;
+				}*/
+				
+			}
+		}
+
+		function pattern(obj, vals, warns){
+
+			var patVal = trim( $(obj).attr('js-pattern') );
+			
+			if( rule(vals, patVal, warns, obj) ){
+				if( $(obj).attr('js-length') && !maxMin(vals, $(obj).attr('js-length').split(',')) ){
+					alert(warns+'长度不符合要求');
+				}else {
+					return true;
+				}
+			}else {
+				return false;
+			}
+
+			
+		}
+
+		function arrLen(arr, num){
+			arr.length = num;
+			return arr;
+		}
+
+		function maxMin(str, arr){
+
+			var newArr = arr.length > 2 ? arrLen(arr, 2) : arr;
+
+			if( newArr.length > 1 ){
+				return str.length >= newArr[0] && str.length <= newArr[1];
+			}else {
+				return str.length == newArr[0];
+			}
+		}
+			
+
+		function rule(vals, patVal, warns, obj){
+			switch( patVal ){
+				case 'd' :
+					if( isNumber(vals) ){//数字
+						return true;
+					}else {
+						alert(warns+'包含非数字');
+						$(obj).focus();
+						return false;
+					}
+				break;
+				case 'en' :
+					if( isEn(vals) ){//英文
+						return true;
+					}else {
+						alert(warns+'不是全英文');
+						$(obj).focus();
+						return false;
+					}
+
+				break;
+				case 'nozn' :
+					if( notHasZn(vals) ){//不包含中文
+						return true;
+					}else {	
+						alert(warns+'包含中文');
+						$(obj).focus();
+						return false;
+					}
+				break;
+				case 'email' ://email
+					if( isEmail(vals) ){
+						return true;
+					}else {
+						alert(warns+'格式不正确');
+						$(obj).focus();
+						return false;
+					}
+				break;
+				case 'w' ://字符
+					if( isChar(vals) ){
+						return true;
+					}else {
+						alert(warns+'包含非字符');
+						$(obj).focus();
+						return false;
+					}
+				break;
+				default: //字符
+					if( isChar(vals) ){
+						return true;
+					}else {
+						alert(warns+'包含非字符');
+						$(obj).focus();
+						return false;
+					}
+			}
+		}
+
+		function filterForm(str){//是够为表单元素
+			var re = /select|input|textarea/;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+		function notNull(str){//不为空
+			if( str == '' || str == null ){
+				return false;
+			}else {
+				return true;
+			}
+		}
+
+		function trim(str){//去除空格
+			var re = /^\s+|\s+$/g;
+			return str.replace(re, '');
+		}
+
+		function isNumber(str){//数字 d
+			var re = /\d/;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+		function isChar(str){//字符 w
+			var re = /\w/;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+		function isEn(str){//英文 en
+			var re = /^[A-Za-z]+$/;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+		function isEmail(str){//邮箱 email
+			var re = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/ ;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+		function notHasZn(str){//不包含中文
+			var re = /[\u4e00-\u9fa5]/;
+			if( re.test(str) ){
+				return false;
+			}else {
+				return true;
+			}
+		}
+
+		function hasEnNum(str){//英文加数字组合
+			var re = /^(([a-z]+[0-9]+)|([0-9]+[a-z]+))[a-z0-9]*$/i;
+			if( re.test(str) ){
+				return true;
+			}else {
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html>

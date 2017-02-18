@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基于jquery的选项卡组件开发</title>
+		<style>
+			*{ margin: 0; padding: 0; }
+			.box input{ padding: 5px; cursor: pointer; }
+			.box input.active{ background: red; }
+			.box>div{ display: none; width: 200px; height: 200px; border: 2px solid #ccc; text-align: center; font: 30px/200px "微软雅黑";}
+			.box>div.active{ display: block; }
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<input class="active" type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class="active">aaa</div>
+			<div>bbb</div>
+			<div>ccc</div>
+		</div>
+		<div class="box">
+			<input class="active" type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class="active">aaa</div>
+			<div>bbb</div>
+			<div>ccc</div>
+		</div>
+		<div class="box">
+			<input class="active" type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class="active">aaa</div>
+			<div>bbb</div>
+			<div>ccc</div>
+		</div>
+		<div class="box">
+			<input class="active" type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class="active">aaa</div>
+			<div>bbb</div>
+			<div>ccc</div>
+		</div>
+		<input type="button" value="获取内容" id="get" style="padding:6px;"/>
+	</body>
+		<script src="./js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script src="./js/tabs.js"></script>
+		<script>
+				var oBox = $('.box');
+				
+				var t1 = new Tabswitch();
+					t1.init(oBox.eq(0));
+					
+				var t2 = new Tabswitch();
+				t2.init(oBox.eq(1),{
+					event : 'mouseover'
+				});
+				
+				var t3 = new Tabswitch();
+				t3.init(oBox.eq(2),{
+					event : 'mouseover',
+					delay : 200
+				});
+				
+				var t4 = new Tabswitch();
+				t4.init(oBox.eq(3),{
+					nowSel : 2
+				});
+				
+				var getC = $('#get');
+				getC.click(function(){
+					alert( t4.getContent() );
+				});
+				
+				$(t4).on('beforeClick',function(){
+					alert( t4.getContent()  );
+				});
+				$(t4).on('afterClick',function(){
+					alert( t4.getContent()  );
+				});
+			
+		</script>
+</html>

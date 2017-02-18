@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>前端小客（杨立峰）</title>
+
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!--[if lte IE 9]>
+    <script src="./bootstrap/js/ie/html5shiv.js" type="text/javascript"></script>
+    <script src="./bootstrap/js/ie//respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <script>
+         var data = [{
+            title : 'Emmet——html/css快速编写神器',
+            href : '/html/Other/2642.html',
+            src : 'http://ylifeng.cn/uploadfiles/2017-02/2/14871328498451994.png',
+            intro : 'Emmet的前身是大名鼎鼎的Zencoding，可以快速简洁的编写',
+            time : '2016-11-15',
+            hits : '16',
+            keywords : 'Other',
+            keywords_url : '/html/list_1539.html'
+        },{
+            title : '1.2&nbsp;vue.js学习笔记之指令—v-for',
+            href : '/html/VueJs/2641.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-11/2/20161175391438873.png',
+            intro : 'VueJs如何做一个列表循环？',
+            time : '2016-12-11',
+            hits : '25',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '(一)开发基于jQuery的自定义轮播组件',
+            href : '/html/assembly/2640.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-12/2/2016121111360454808.jpg',
+            intro : '一起来开发基于jQuery的自定义轮播组件',
+            time : '2016-12-11',
+            hits : '18',
+            keywords : 'assembly',
+            keywords_url : '/html/list_1538.html'
+        },{
+            title : '1.1&nbsp;vue.js学习笔记之指令——v-if',
+            href : '/html/VueJs/2639.html',
+            src : 'http://cn.vuejs.org/images/logo.png',
+            intro : '为了迎合国人的学习口味，本套vueJs学习教程将不会依照',
+            time : '2016-11-07',
+            hits : '50',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : 'CanVas之绘制直线和多边形',
+            href : '/html/CanVas/2638.html',
+            src : 'http://ylifeng.cn/uploadfiles/2016-11/2/20161173696505857.jpg',
+            intro : 'CanVas之绘制直线和多边形',
+            time : '2016-11-07',
+            hits : '33',
+            keywords : 'CanVas',
+            keywords_url : '/html/list_1536.html'
+        },{
+            title : 'CSS3动画之Animation',
+            href : '/html/CSS3/2637.html',
+            src : 'http://ylifeng.cn/uploadfiles/2016-11/2/20161179269683502.jpg',
+            intro : 'CSS3动画之Animation',
+            time : '2016-11-07',
+            hits : '11',
+            keywords : 'CSS3',
+            keywords_url : '/html/list_1534.html'
+        },{
+            title : '浅谈html5本地存储',
+            href : '/html/HTML5/2636.html',
+            src : 'http://ylifeng.cn/uploadfiles/2016-11/2/14785112898022291.jpg',
+            intro : '自从html5推出后，极致的体验收到了广大用户的一致好评',
+            time : '2016-11-07',
+            hits : '41',
+            keywords : 'HTML5',
+            keywords_url : '/html/list_1535.html'
+        },{
+            title : '[转]Javascript操作DOM常用API总结',
+            href : '/html/JavaScript/2635.html',
+            src : 'http://ylifeng.cn/yl/img/articlelist/sdfgh.jpg',
+            intro : '文章来自转载，原文链接请见文章结尾！',
+            time : '2016-11-06',
+            hits : '98',
+            keywords : 'JavaScript',
+            keywords_url : '/html/list_1533.html'
+        },{
+            title : '1.2&nbsp;vue.js学习笔记之指令—v-for',
+            href : '/html/VueJs/2641.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-11/2/20161175391438873.png',
+            intro : 'VueJs如何做一个列表循环？',
+            time : '2016-12-11',
+            hits : '25',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '(一)开发基于jQuery的自定义轮播组件',
+            href : '/html/assembly/2640.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-12/2/2016121111360454808.jpg',
+            intro : '一起来开发基于jQuery的自定义轮播组件',
+            time : '2016-12-11',
+            hits : '18',
+            keywords : 'assembly',
+            keywords_url : '/html/list_1538.html'
+        },{
+            title : '1.1&nbsp;vue.js学习笔记之指令——v-if',
+            href : '/html/VueJs/2639.html',
+            src : 'http://cn.vuejs.org/images/logo.png',
+            intro : '为了迎合国人的学习口味，本套vueJs学习教程将不会依照',
+            time : '2016-11-07',
+            hits : '50',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '1.2&nbsp;vue.js学习笔记之指令—v-for',
+            href : '/html/VueJs/2641.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-11/2/20161175391438873.png',
+            intro : 'VueJs如何做一个列表循环？',
+            time : '2016-12-11',
+            hits : '25',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '(一)开发基于jQuery的自定义轮播组件',
+            href : '/html/assembly/2640.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-12/2/2016121111360454808.jpg',
+            intro : '一起来开发基于jQuery的自定义轮播组件',
+            time : '2016-12-11',
+            hits : '18',
+            keywords : 'assembly',
+            keywords_url : '/html/list_1538.html'
+        },{
+            title : '1.1&nbsp;vue.js学习笔记之指令——v-if',
+            href : '/html/VueJs/2639.html',
+            src : 'http://cn.vuejs.org/images/logo.png',
+            intro : '为了迎合国人的学习口味，本套vueJs学习教程将不会依照',
+            time : '2016-11-07',
+            hits : '50',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '1.2&nbsp;vue.js学习笔记之指令—v-for',
+            href : '/html/VueJs/2641.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-11/2/20161175391438873.png',
+            intro : 'VueJs如何做一个列表循环？',
+            time : '2016-12-11',
+            hits : '25',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '(一)开发基于jQuery的自定义轮播组件',
+            href : '/html/assembly/2640.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-12/2/2016121111360454808.jpg',
+            intro : '一起来开发基于jQuery的自定义轮播组件',
+            time : '2016-12-11',
+            hits : '18',
+            keywords : 'assembly',
+            keywords_url : '/html/list_1538.html'
+        },{
+            title : '1.1&nbsp;vue.js学习笔记之指令——v-if',
+            href : '/html/VueJs/2639.html',
+            src : 'http://cn.vuejs.org/images/logo.png',
+            intro : '为了迎合国人的学习口味，本套vueJs学习教程将不会依照',
+            time : '2016-11-07',
+            hits : '50',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '1.2&nbsp;vue.js学习笔记之指令—v-for',
+            href : '/html/VueJs/2641.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-11/2/20161175391438873.png',
+            intro : 'VueJs如何做一个列表循环？',
+            time : '2016-12-11',
+            hits : '25',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        },{
+            title : '(一)开发基于jQuery的自定义轮播组件',
+            href : '/html/assembly/2640.html',
+            src : 'http://ylifeng.cn/UploadFiles/2016-12/2/2016121111360454808.jpg',
+            intro : '一起来开发基于jQuery的自定义轮播组件',
+            time : '2016-12-11',
+            hits : '18',
+            keywords : 'assembly',
+            keywords_url : '/html/list_1538.html'
+        },{
+            title : '1.1&nbsp;vue.js学习笔记之指令——v-if',
+            href : '/html/VueJs/2639.html',
+            src : 'http://cn.vuejs.org/images/logo.png',
+            intro : '为了迎合国人的学习口味，本套vueJs学习教程将不会依照',
+            time : '2016-11-07',
+            hits : '50',
+            keywords : 'VueJs',
+            keywords_url : '/html/list_1537.html'
+        }];
+
+    </script>
+</head>
+<body>
+
+    <article id="content">
+        <div class="container">
+            <div class="row" id="page_contents">
+                <!--<div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <i class="btn btn-warning btn-sm icon_i"><span class="glyphicon glyphicon-flag"></span>JavaScript</i>
+                        <div class="con_title">
+                            <h2>[转]Javascript操作DOM常用API总结</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/sdfgh.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <i class="btn btn-warning btn-sm icon_i"><span class="glyphicon glyphicon-flag"></span>CSS3</i>
+                        <div class="con_title">
+                            <h2>好用到冒泡的“box-sizing”页面布局神器！</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/ddghbox.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <i class="btn btn-warning btn-sm icon_i"><span class="glyphicon glyphicon-flag"></span>CanVas</i>
+                        <div class="con_title">
+                            <h2>chrome私有的:-webkit-autofill属性自动填充的input黄色背景解决方案！放地方地方额地方</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/ddghbox.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <div class="con_title">
+                            <h2>[转]Javascript操作DOM常用API总结</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/sdfgh.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <div class="con_title">
+                            <h2>[转]Javascript操作DOM常用API总结</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/ddghbox.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <section class="wrap_list">
+                        <div class="con_title">
+                            <h2>[转]Javascript操作DOM常用API总结</h2>
+                        </div>
+                        <div class="con_imgbox">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/articleList/sdfgh.jpg" alt="..." />
+                            </a>
+                            <p>章来自转载，原文链接请见文章结尾！</p>
+                        </div>
+                        <div class="con_bottom">
+                            <p>
+                                <span class="glyphicon glyphicon-calendar"></span><time>2016-11-02</time>
+                                &nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open"></span><time>288次浏览</time>
+                            </p>
+                            <p>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">JavaScript</a>
+                                <a href="javascript:;" class="btn btn-sm btn-primary">CSS3</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="container contant_pages" id="contant_pages">
+            <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;line-height:inherit;">
+                    <span>100%</span>
+                </div>
+            </div>
+            <p class="text-center"><span style="font-size:1.2em;" class="glyphicon glyphicon-chevron-down"></span></p>
+        </div>
+    </article>
+    <script src="./js/scrollToPages.js" type="text/javascript"></script>
+    <script>
+        var pages = new PageLoad();
+        //toBind();
+        pages.init(data,{
+            contentBox: document.getElementById('page_contents'),  //容器
+            page: 6,  //每页加载数量
+            list_tempalte: list_tempalte
+        });
+
+        function list_tempalte(obj, i){
+            var oBox = document.createElement('div');
+            oBox.className = 'col-md-4 col-sm-6';
+
+                if( obj.can_support && obj.defaults.canvas ){
+                    oBox.innerHTML = '<section class="wrap_list">\
+                                        <div class="con_title">\
+                                            <h2>'+obj.data[i]['title']+'</h2>\
+                                        </div>\
+                                        <div class="con_imgbox">\
+                                            <a href="'+obj.data[i]['href']+'" title="'+obj.data[i]['title']+'" target="_blank" class="thumbnail">\
+                                                <canvas class="oGc_'+i+'" style="width:100%" ></canvas>\
+                                            </a>\
+                                            <p>'+obj.data[i]['intro']+'</p>\
+                                        </div>\
+                                        <div class="con_bottom">\
+                                            <p>\
+                                                <span class="glyphicon glyphicon-calendar"></span><time>'+obj.data[i]['time']+'</time>\
+                                                <span class="glyphicon glyphicon-eye-open"></span><time>'+obj.data[i]['hits']+'次浏览</time>\
+                                            </p>\
+                                            <p>\
+                                                <a href="'+obj.data[i]['keywords_url']+'" class="btn btn-sm btn-primary">'+obj.data[i]['keywords']+'</a>\
+                                            </p>\
+                                        </div>\
+                                    </section>';
+                }else {
+                    oBox.innerHTML = '<section class="wrap_list">\
+                                        <div class="con_title">\
+                                            <h2>'+obj.data[i]['title']+'</h2>\
+                                        </div>\
+                                        <div class="con_imgbox">\
+                                            <a href="'+obj.data[i]['href']+'" title="'+obj.data[i]['title']+'" target="_blank" class="thumbnail">\
+                                                <img src="'+obj.data[i]['src']+'" style="width:100%;height:175px;" />\
+                                            </a>\
+                                            <p>'+obj.data[i]['intro']+'</p>\
+                                        </div>\
+                                        <div class="con_bottom">\
+                                            <p>\
+                                                <span class="glyphicon glyphicon-calendar"></span><time>'+obj.data[i]['time']+'</time>\
+                                                <span class="glyphicon glyphicon-eye-open"></span><time>'+obj.data[i]['hits']+'次浏览</time>\
+                                            </p>\
+                                            <p>\
+                                                <a href="'+obj.data[i]['keywords_url']+'" class="btn btn-sm btn-primary">'+obj.data[i]['keywords']+'</a>\
+                                            </p>\
+                                        </div>\
+                                    </section>';
+                }
+            return oBox;
+        }
+
+        function toBind(){
+            var pageCon = document.getElementById('contant_pages');
+
+            binds(pages, 'pageBefore', function(){ //每次加载前
+                pageCon.innerHTML = '<div class="progress">\
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;line-height:inherit;">\
+                                            <span>loading...</span>\
+                                        </div>\
+                                    </div>';
+            });
+
+            binds(pages, 'pageAfter', function(){ //每次加载后
+                pageCon.innerHTML = '<p class="text-center"><span style="font-size:1.2em;" class="glyphicon glyphicon-chevron-down"></span></p>';
+            });
+
+            binds(pages, 'allAfter', function(){ //全部加载后
+                pageCon.innerHTML = '<div class="progress">\
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;line-height:inherit;">\
+                                            <span>100%</span>\
+                                        </div>\
+                                    </div>';
+            });
+        }
+    </script>
+</body>
+</html>
